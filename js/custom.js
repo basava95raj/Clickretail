@@ -23,6 +23,12 @@ function submitToAPI(e) {
              return;
          }
 
+         var recaptchaRes = grecaptcha.getResponse();
+         if(recaptchaRes.length == 0 ){
+            alert ("Please complete the reCAPTCHA challenge!");
+            return;
+         }
+
     var name = $("#name-input").val();
     var phone = $("#phone-input").val();
     var email = $("#email-input").val();
