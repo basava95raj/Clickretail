@@ -14,7 +14,8 @@
     <link href="css/plugins.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
-    <link href="css/fonts.css" rel="stylesheet"> 
+    <link href="css/fonts.css" rel="stylesheet">
+    <script defer src="js/custom.js"></script> 
 </head>
 
 <body>
@@ -60,7 +61,7 @@
             <!-- Google Map -->
             <div id="map-container-google-3" class="z-depth-1-half map-container-3">
                 <iframe src="https://maps.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.4857496366617!2d77.62696531477165!3d13.0683719907925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1953f7ed92a1%3A0x2552fdfaa4680a4e!2sClick%20retail!5e0!3m2!1sen!2sin!4v1596031128432!5m2!1sen!2sin" frameborder="0"
-                  style="border:0;height: 450px;" allowfullscreen></iframe>
+                  style="border:0;height: 400px;" allowfullscreen></iframe>
               </div>
             <!-- <div class="map" data-latitude="-37.817240" data-longitude="144.955826" data-style="light" data-info="Hello from &lt;br&gt; Inspiro Themes" data-height-lg="500" data-height-xs="200" data-height-sm="300"></div> -->
             <!-- end: Google Map -->
@@ -80,7 +81,7 @@
                                     #149, Aruna arcade, 80 ft road,<br>
                                     Dr.Shivaram Karanth Nagar, RK Hegde Nagar,<br>
 									Bengaluru, Karnataka 560077<br>
-                                    <abbr title="Phone">P:</h4> 080 2950 0949
+                                    <abbr title="Phone">P:</h4> 080 2950 0949, 8095959395
                                 </address>
                             </div>                            
                         </div>
@@ -94,32 +95,32 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <form class="widget-contact-form" novalidate action="include/contact-form.php" role="form" method="post">
+                        <form id="contact-form" class="widget-contact-form" novalidate role="form" method="post">
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="name">Name</label>
-                                    <input type="text" aria-required="true" required name="widget-contact-form-name" class="form-control required name" placeholder="Enter your Name">
+                                    <input type="text" id="name-input" aria-required="true" required name="widget-contact-form-name" class="form-control required name" placeholder="Enter your Name">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="email">Email</label>
-                                    <input type="email" aria-required="true" required name="widget-contact-form-email" class="form-control required email" placeholder="Enter your Email">
+                                    <input type="email" id="email-input" aria-required="true" required name="widget-contact-form-email" class="form-control required email" placeholder="Enter your Email">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="subject">Phone Number</label>
-                                    <input type="text" name="widget-contact-form-subject" required class="form-control required" placeholder="Phone Number">
+                                    <input type="phone" pattern="[0-9]{10}" id="phone-input" name="widget-contact-form-subject" required class="form-control required" placeholder="Phone Number">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="message">Message</label>
-                                <textarea type="text" name="widget-contact-form-message" required rows="5" class="form-control required" placeholder="Enter your Message"></textarea>
+                                <textarea type="text" id="description-input" name="widget-contact-form-message" required rows="5" class="form-control required" placeholder="Enter your Message"></textarea>
                             </div>
                             <div class="form-group">
                                 <script src='https://www.google.com/recaptcha/api.js'></script>
                                 <div class="g-recaptcha" data-sitekey="6LdMwrcZAAAAALV6SPfsIuZaVHyMjn-aNbZl_eE0"></div>
                             </div>
-                            <button class="btn btn-primary" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+                            <button class="btn btn-primary" type="button" id="form-submit" onClick="submitToAPI(event)"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                         </form>
                     </div>
                 </div>
